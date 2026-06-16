@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Canadian Prop Money",
+  "description": "Canada\u0027s premium, most trusted realistic currency reproduction company for film, TV, theatrical productions, and training.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

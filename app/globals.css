@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #D91E18;     /* Editorial Canadian Maple Red */
+  --color-secondary: #8B1E1B;   /* Deep Crimson Red ($50) */
+  --color-accent: #1D4D7C;      /* Ocean Blue ($5) */
+  --color-gold: #C5A059;        /* Refined Satin Gold ($100) */
+  
+  --color-primary-button: #D91E18; /* Maple Red representing the Editorial brand color */
+  --color-bg-dark: #0A0A0B;        /* Absolute dark matte black */
+  --color-card-dark: #121214;      /* High contrast dark block backdrop */
+  
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+@theme {
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-display), sans-serif;
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-gold: var(--color-gold);
+  --color-ob-bg: var(--color-card-dark);
+}
+
+/* Glassmorphism/Editorial block card styling */
+.glass-card {
+  background: #121214;
+  backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  background: #161619;
+  border-color: rgba(217, 30, 24, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.82);
+}
+
+/* Glowing text and borders representing different banknotes */
+.glow-primary {
+  box-shadow: 0 0 15px -3px rgba(217, 30, 24, 0.15);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 15px -3px rgba(139, 30, 27, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 15px -3px rgba(197, 160, 89, 0.15);
+}
+
+/* Scrolling marquee animation for the notice bar */
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Safe Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D91E18;
+}
