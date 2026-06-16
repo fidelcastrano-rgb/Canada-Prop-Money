@@ -1,6 +1,4 @@
 import { Resend } from "resend";
-import fs from "fs";
-import path from "path";
 import { getDB } from "./db";
 
 let resendInstance: Resend | null = null;
@@ -28,6 +26,7 @@ export interface EmailPayload {
   date: string;
   items: Array<{ name: string; quantity: number; price: number }>;
   invoicePath?: string;
+  invoiceBase64?: string;
   phone?: string;
 }
 
@@ -136,15 +135,11 @@ export async function sendCustomerConfirmation(payload: EmailPayload): Promise<{
   if (resend) {
     try {
       const attachments = [];
-      if (payload.invoicePath) {
-        const fullInvoicePath = path.join(process.cwd(), "public", payload.invoicePath);
-        if (fs.existsSync(fullInvoicePath)) {
-          const fileBuffer = fs.readFileSync(fullInvoicePath);
-          attachments.push({
-            content: fileBuffer.toString("base64"),
-            filename: `${payload.orderNumber}-invoice.pdf`,
-          });
-        }
+      if (payload.invoiceBase64) {
+        attachments.push({
+          content: payload.invoiceBase64,
+          filename: `${payload.orderNumber}-invoice.pdf`,
+        });
       }
 
       await resend.emails.send({
@@ -164,12 +159,12 @@ export async function sendCustomerConfirmation(payload: EmailPayload): Promise<{
   }
 
   // Save trace in database
-  const result = db.prepare(`
+  const result = await db.prepare(`
     INSERT INTO email_logs (order_id, email_type, recipient, status, created_at)
     VALUES (?, ?, ?, ?, datetime('now'))
-  `).run(payload.orderId, "customer_confirmation", payload.recipientEmail, sendStatus);
+  `).bind(payload.orderId, "customer_confirmation", payload.recipientEmail, sendStatus).run();
 
-  return { success: sendStatus === "sent" || sendStatus === "logged_virtual", logId: Number(result.lastInsertRowid) };
+  return { success: sendStatus === "sent" || sendStatus === "logged_virtual", logId: Number(result.meta.last_row_id) };
 }
 
 export async function sendAdminNotification(payload: EmailPayload): Promise<{ success: boolean; logId: number }> {
@@ -262,15 +257,11 @@ export async function sendAdminNotification(payload: EmailPayload): Promise<{ su
   if (resend) {
     try {
       const attachments = [];
-      if (payload.invoicePath) {
-        const fullInvoicePath = path.join(process.cwd(), "public", payload.invoicePath);
-        if (fs.existsSync(fullInvoicePath)) {
-          const fileBuffer = fs.readFileSync(fullInvoicePath);
-          attachments.push({
-            content: fileBuffer.toString("base64"),
-            filename: `${payload.orderNumber}-invoice.pdf`,
-          });
-        }
+      if (payload.invoiceBase64) {
+        attachments.push({
+          content: payload.invoiceBase64,
+          filename: `${payload.orderNumber}-invoice.pdf`,
+        });
       }
 
       await resend.emails.send({
@@ -290,10 +281,10 @@ export async function sendAdminNotification(payload: EmailPayload): Promise<{ su
   }
 
   // Save trace in database
-  const result = db.prepare(`
+  const result = await db.prepare(`
     INSERT INTO email_logs (order_id, email_type, recipient, status, created_at)
     VALUES (?, ?, ?, ?, datetime('now'))
-  `).run(payload.orderId, "admin_notification", adminEmail, sendStatus);
+  `).bind(payload.orderId, "admin_notification", adminEmail, sendStatus).run();
 
-  return { success: sendStatus === "sent" || sendStatus === "logged_virtual", logId: Number(result.lastInsertRowid) };
+  return { success: sendStatus === "sent" || sendStatus === "logged_virtual", logId: Number(result.meta.last_row_id) };
 }

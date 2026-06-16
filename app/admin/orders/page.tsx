@@ -119,7 +119,7 @@ export default function AdminDashboardPage() {
 
   // Delete absolute order record
   const handleDeleteOrder = async (orderNumber: string) => {
-    if (!confirm(`⚠️ ARE YOU ABSOLUTELY SURE? This will permanently delete Order ${orderNumber} from the Cloudflare D1 / SQLite database. This is irreversible!`)) {
+    if (!confirm(`⚠️ ARE YOU ABSOLUTELY SURE? This will permanently delete Order ${orderNumber} from the secure Cloudflare database. This is irreversible!`)) {
       return;
     }
 

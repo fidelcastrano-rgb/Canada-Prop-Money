@@ -4,12 +4,14 @@ import { generateInvoicePDF } from "@/lib/invoice-generator";
 import { sendCustomerConfirmation, sendAdminNotification } from "@/lib/email-service";
 import { Resend } from "resend";
 
+export const runtime = "edge";
+
 export async function GET(req: NextRequest) {
   try {
     const db = getDB();
     
     // Joint query to fetch all orders with customer details
-    const orders = db.prepare(`
+    const { results: orders } = await db.prepare(`
       SELECT 
         o.id,
         o.order_number,
@@ -32,15 +34,15 @@ export async function GET(req: NextRequest) {
       FROM orders o
       JOIN customers c ON o.customer_id = c.id
       ORDER BY o.id DESC
-    `).all() as any[];
+    `).all();
 
     // Fetch items for each order
-    for (const order of orders) {
-      const items = db.prepare(`
+    for (const order of (orders as any[])) {
+      const { results: items } = await db.prepare(`
         SELECT product_id as id, product_name as name, quantity as qty, price
         FROM order_items
         WHERE order_id = ?
-      `).all(order.id);
+      `).bind(order.id).all();
       
       order.items = items;
     }
@@ -81,52 +83,52 @@ export async function POST(req: NextRequest) {
 
     const db = getDB();
 
-    // 1. Transaction-safe insert order logic
-    const createOrderTx = db.transaction(() => {
-      // Create customer first
-      const customerResult = db.prepare(`
-        INSERT INTO customers (first_name, last_name, email, phone, country, state, city, address, postal_code, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
-      `).run(firstName, lastName, email, phone, country, state, city, address, postalCode);
-      const customerId = Number(customerResult.lastInsertRowid);
+    // Sequential inserts substituting db.transaction
+    // 1. Create customer first
+    const customerResult = await db.prepare(`
+      INSERT INTO customers (first_name, last_name, email, phone, country, state, city, address, postal_code, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+    `).bind(firstName, lastName, email, phone, country, state, city, address, postalCode).run();
+    
+    // Fallback if lastRowId isn't reliable, but usually meta.last_row_id works
+    const customerId = Number(customerResult.meta.last_row_id);
 
-      // Generate visual sequential 2026 order number
-      const ordersCountObj = db.prepare(`SELECT count(*) as total FROM orders`).get() as { total: number };
-      const sequentialNum = String(ordersCountObj.total + 1).padStart(6, "0");
-      const orderNumber = `CPM-2026-${sequentialNum}`;
+    // Generate visual sequential 2026 order number
+    const ordersCountObj = await db.prepare(`SELECT count(*) as total FROM orders`).first() as { total: number };
+    const sequentialNum = String((ordersCountObj?.total || 0) + 1).padStart(6, "0");
+    const orderNumber = `CPM-2026-${sequentialNum}`;
 
-      // Insert order details
-      const orderResult = db.prepare(`
-        INSERT INTO orders (order_number, customer_id, subtotal, shipping, discount, total, payment_method, status, created_at)
-        VALUES (?, ?, ?, ?, 0, ?, ?, ?, datetime('now'))
-      `).run(orderNumber, customerId, subtotal, shippingCost, total, paymentMethod, "Pending");
-      const orderId = Number(orderResult.lastInsertRowid);
+    // Insert order details
+    const orderResult = await db.prepare(`
+      INSERT INTO orders (order_number, customer_id, subtotal, shipping, discount, total, payment_method, status, created_at)
+      VALUES (?, ?, ?, ?, 0, ?, ?, ?, datetime('now'))
+    `).bind(orderNumber, customerId, subtotal, shippingCost, total, paymentMethod, "Pending").run();
+    const orderId = Number(orderResult.meta.last_row_id);
 
-      // Insert all individual cart items
-      const insertItemStmt = db.prepare(`
-        INSERT INTO order_items (order_id, product_id, product_name, quantity, price)
-        VALUES (?, ?, ?, ?, ?)
-      `);
-      for (const item of items) {
-        insertItemStmt.run(orderId, item.id || item.name, item.name, item.qty, item.price);
-      }
+    // Insert all individual cart items
+    const insertItemStmt = db.prepare(`
+      INSERT INTO order_items (order_id, product_id, product_name, quantity, price)
+      VALUES (?, ?, ?, ?, ?)
+    `);
+    
+    const insertPromises = items.map((item: any) => 
+      insertItemStmt.bind(orderId, item.id || item.name, item.name, item.qty, item.price).run()
+    );
+    await Promise.all(insertPromises);
 
-      // Initialize history state timeline
-      db.prepare(`
-        INSERT INTO order_status_history (order_id, status, created_at)
-        VALUES (?, 'Pending', datetime('now'))
-      `).run(orderId);
+    // Initialize history state timeline
+    await db.prepare(`
+      INSERT INTO order_status_history (order_id, status, created_at)
+      VALUES (?, 'Pending', datetime('now'))
+    `).bind(orderId).run();
 
-      return { orderId, customerId, orderNumber };
-    });
-
-    const { orderId, customerId, orderNumber } = createOrderTx();
     const formattedDate = new Date().toLocaleDateString("en-CA");
 
     // 2. Generate PDF Invoice dynamically
     let invoicePath = "";
+    let invoiceBase64 = "";
     try {
-      invoicePath = await generateInvoicePDF({
+      const invoiceData = await generateInvoicePDF({
         orderNumber,
         date: formattedDate,
         firstName,
@@ -148,6 +150,8 @@ export async function POST(req: NextRequest) {
         total,
         paymentMethod,
       });
+      invoicePath = invoiceData.path;
+      invoiceBase64 = invoiceData.base64;
     } catch (err: any) {
       console.error("PDF Invoice Builder crash", err);
     }
@@ -164,6 +168,7 @@ export async function POST(req: NextRequest) {
       date: formattedDate,
       items: items.map((it: any) => ({ name: it.name, quantity: it.qty, price: it.price })),
       invoicePath,
+      invoiceBase64,
       phone,
     };
 
@@ -230,27 +235,27 @@ export async function PUT(req: NextRequest) {
     const db = getDB();
 
     // Find the order
-    const order = db.prepare("SELECT * FROM orders WHERE order_number = ?").get(orderNumber) as any;
+    const order = await db.prepare("SELECT * FROM orders WHERE order_number = ?").bind(orderNumber).first() as any;
     if (!order) {
       return NextResponse.json({ error: "Order not found" }, { status: 404 });
     }
 
     // Update order status
-    db.prepare("UPDATE orders SET status = ? WHERE id = ?").run(status, order.id);
+    await db.prepare("UPDATE orders SET status = ? WHERE id = ?").bind(status, order.id).run();
 
     // Log status history transition
-    db.prepare(`
+    await db.prepare(`
       INSERT INTO order_status_history (order_id, status, created_at)
       VALUES (?, ?, datetime('now'))
-    `).run(order.id, status);
+    `).bind(order.id, status).run();
 
     // Fetch customer details to automatically email customer regarding status update
-    const customer = db.prepare("SELECT * FROM customers WHERE id = ?").get(order.customer_id) as any;
-    const items = db.prepare(`
+    const customer = await db.prepare("SELECT * FROM customers WHERE id = ?").bind(order.customer_id).first() as any;
+    const { results: items } = await db.prepare(`
       SELECT product_name as name, quantity as qty, price
       FROM order_items
       WHERE order_id = ?
-    `).all(order.id) as any[];
+    `).bind(order.id).all();
 
     // Trigger automated status email notification
     let emailStatus = "pending";
@@ -295,10 +300,10 @@ export async function PUT(req: NextRequest) {
     }
 
     // Log the automatic status update email
-    db.prepare(`
+    await db.prepare(`
       INSERT INTO email_logs (order_id, email_type, recipient, status, created_at)
       VALUES (?, ?, ?, ?, datetime('now'))
-    `).run(order.id, `status_updated_to_${status.toLowerCase()}`, customer.email, emailStatus);
+    `).bind(order.id, `status_updated_to_${status.toLowerCase()}`, customer.email, emailStatus).run();
 
     return NextResponse.json({ success: true });
   } catch (e: any) {
@@ -315,9 +320,9 @@ export async function DELETE(req: NextRequest) {
     }
 
     const db = getDB();
-    const result = db.prepare("DELETE FROM orders WHERE order_number = ?").run(orderNumber);
+    const result = await db.prepare("DELETE FROM orders WHERE order_number = ?").bind(orderNumber).run();
 
-    if (result.changes === 0) {
+    if (result.meta?.changes === 0) {
       return NextResponse.json({ error: "Order not found" }, { status: 404 });
     }
 

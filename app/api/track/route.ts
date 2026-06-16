@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDB } from "@/lib/db";
 
+export const runtime = "edge";
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -14,7 +16,7 @@ export async function GET(req: NextRequest) {
     const db = getDB();
 
     // Query order joined with customer
-    const order = db.prepare(`
+    const order = await db.prepare(`
       SELECT 
         o.id,
         o.order_number as orderNumber,
@@ -34,26 +36,26 @@ export async function GET(req: NextRequest) {
       FROM orders o
       JOIN customers c ON o.customer_id = c.id
       WHERE LOWER(o.order_number) = ? AND LOWER(c.email) = ?
-    `).get(orderNumber.trim().toLowerCase(), email.trim().toLowerCase()) as any;
+    `).bind(orderNumber.trim().toLowerCase(), email.trim().toLowerCase()).first() as any;
 
     if (!order) {
       return NextResponse.json({ error: "No matching registered cinematic order was matched." }, { status: 404 });
     }
 
     // Retrieve corresponding track items
-    const items = db.prepare(`
+    const { results: items } = await db.prepare(`
       SELECT product_name as name, quantity as qty, price
       FROM order_items
       WHERE order_id = ?
-    `).all(order.id) as any[];
+    `).bind(order.id).all();
 
     // Retrieve order status history timeline
-    const timeline = db.prepare(`
+    const { results: timeline } = await db.prepare(`
       SELECT status, created_at as date
       FROM order_status_history
       WHERE order_id = ?
       ORDER BY id DESC
-    `).all(order.id) as any[];
+    `).bind(order.id).all();
 
     return NextResponse.json({
       success: true,

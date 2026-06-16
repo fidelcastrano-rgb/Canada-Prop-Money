@@ -384,65 +384,50 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": "us-100-stack",
-    "slug": "us-100-stack",
-    "name": "Buy Counterfeit $100 US Dollars Banknotes",
-    "tagline": "Premium authentic $100 US Dollars. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
+    "slug": "counterfeit-usd-100-banknotes",
+    "name": "Counterfeit USD $100 Banknotes",
+    "tagline": "Premium authentic counterfeit usd $100 banknotes. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
     "category": "US Dollars",
     "badge": "New Production",
-    "rating": 4.8,
-    "reviewCount": 41,
-    "basePrice": 200,
-    "originalPrice": 300,
+    "rating": 5,
+    "reviewCount": 134,
+    "basePrice": 500,
+    "originalPrice": 650,
     "colorTheme": "from-amber-500/10 to-yellow-600/15 text-amber-400 border-amber-500/20",
     "stripeColor": "#D4AF37",
     "bannerColor": "bg-amber-600/10 border-amber-500/30 text-amber-400",
     "imageSet": [
-      "https://propcounterfeitnotes.com/public/upload/product/buy-counterfeit-100-cad-banknotes.251webp",
-      "https://propcounterfeitnotes.com/public/upload/product/buy-counterfeit-100-cad-banknotes.251webp"
+      "https://propcounterfeitnotes.com/public/upload/product/buy-100-us-dollar-bills.224webp",
+      "https://picsum.photos/seed/prop100b/600/400",
+      "https://picsum.photos/seed/prop100d/600/400"
     ],
-    "description": "$100 US Dollars with exquisite anti-reflective matte coating, perfect for high-definition cinematic capture.",
-    "longDescription": "Cinema-grade realistic currency reproduction certified for television and motion picture use.",
-    "coaText": "Certified compliant with legal filming guidelines.",
+    "description": "Buy Counterfeit $100 USD Banknotes Online | 100% Undetectable Fake US Dollar Bills\n\nAre you searching for the most reliable place to buy counterfeit $100 USD banknotes online? Prop Counterfeit Notes Inc is your trusted source for 100% undetectable counterfeit money, offering premium fake US 100 dollar bills that are virtually indistinguishable from genuine currency.",
+    "longDescription": "Buy Counterfeit $100 USD Banknotes Online | 100% Undetectable Fake US Dollar Bills\n\nAre you searching for the most reliable place to buy counterfeit $100 USD banknotes online? Prop Counterfeit Notes Inc is your trusted source for 100% undetectable counterfeit money, offering premium fake US 100 dollar bills that are virtually indistinguishable from genuine currency. Our advanced printing technology and strict quality control ensure every note passes both visual and tactile inspections, giving you complete confidence in every transaction.\n\nWhy Buy Counterfeit $100 USD Banknotes from Prop Counterfeit Notes Inc?\n\nWhen it comes to buying counterfeit money online, quality and security are essential. Our counterfeit $100 USD bills are produced using state-of-the-art printing equipment and authentic materials, including security threads and polymer substrates. Each note features microprinting, UV-reactive elements, raised ink, and color-shifting security features—making them 100% undetectable under standard verification methods.\n\nWe understand the importance of privacy and discretion. Every order is packaged securely and shipped worldwide with full confidentiality. Whether you need fake US 100 dollar bills for personal use, financial flexibility, or discreet transactions, Prop Counterfeit Notes Inc delivers unmatched reliability and customer satisfaction.\n\nKey Features of Our Fake US 100 Dollar Bills\n\n\n\t100% Undetectable Counterfeit Money: Designed to pass all standard security checks, including UV light and touch tests.\n\tAdvanced Security Features: Embedded security threads, color-shifting ink, microprinting, and watermarks for authentic appearance.\n\tPremium Materials: Manufactured with high-quality cotton-linen blend for a genuine feel.\n\tFast & Discreet Shipping: Worldwide delivery with secure, private packaging for your peace of mind.\n\tFlexible Payment Options: Safe and encrypted payment methods, including cryptocurrencies, for total anonymity.\n\tMoney-Back Guarantee: If you’re not satisfied, we offer a full refund—your satisfaction is our priority.\n\n\nHow to Buy Counterfeit $100 USD Banknotes Online\n\nOrdering your counterfeit money online is simple and secure with Prop Counterfeit Notes Inc. Here’s how to buy:\n\n\n\tVisit Our Product Page: Go to the Buy Counterfeit $100 USD Banknotes section.\n\tSelect Quantity: Choose the amount of fake US 100 dollar bills you wish to purchase.\n\tProceed to Checkout: Complete your order using our secure payment options.\n\tEnjoy Fast Delivery: Your counterfeit bills will be shipped discreetly to your address, anywhere in the world.\n\n\nCounterfeit Money for Sale Online – Why Choose Us?\n\n\n\tYears of experience in producing undetectable counterfeit money\n\tTrusted by thousands of satisfied customers worldwide\n\tCompetitive prices and exclusive discounts for bulk orders\n\tFull compliance with privacy and safe delivery standards\n\n\nExpand Your Options\n\nLooking for other denominations or currencies? We also offer:\n\n\n\tBuy Counterfeit $5 CAD Banknotes\n\tBuy Counterfeit $10 CAD Banknotes\n\tBuy Counterfeit $20 CAD Banknotes\n\tBuy Counterfeit $50 CAD Banknotes\n\tBuy Counterfeit $100 CAD Banknotes\n\tFake US Dollar Bills\n\tCounterfeit Euro Banknotes\n\n\nDon’t risk your money on unreliable sellers or low-quality fake bills. Buy counterfeit money online now from Prop Counterfeit Notes Inc and experience the highest standards of quality, security, and customer service in the industry.\n\n \n                            \n                            \n                                \n                                    \n                                        \n                                                                                      \n                                        \n                                            Submit a Review\n                                            \n                                                \n                                                    \n                                                        Select Rating Star : \n                                                        \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                        \n                                                    \n                                                    \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                            Submit",
+    "coaText": "Official COA Issued: Meets Bank of Canada guidelines for legitimate filmmaking props.",
     "variants": [
       {
-        "name": "Starter Bundle (50 Notes - $5,000 Face Value)",
-        "price": 200,
-        "savingsLabel": "Save 33%",
+        "name": "Standard Pack ($5,000 USD Face Value)",
+        "price": 500,
         "billCount": 50
       },
       {
-        "name": "Compact Bundle (100 Notes - $10,000 Face Value)",
-        "price": 400,
-        "savingsLabel": "Save 31%",
+        "name": "Standard Pack ($10,000 USD Face Value)",
+        "price": 1000,
         "billCount": 100
       },
       {
-        "name": "Premium Bundle (250 Notes - $25,000 Face Value)",
-        "price": 1000,
-        "savingsLabel": "Save 23%",
-        "billCount": 250
-      },
-      {
-        "name": "Production Bundle (500 Notes - $50,000 Face Value)",
+        "name": "Standard Pack ($20,000  USD Face Value)",
         "price": 2000,
-        "savingsLabel": "Save 33%",
+        "billCount": 200
+      },
+      {
+        "name": "Standard Pack ($50,000  USD Face Value)",
+        "price": 5000,
         "billCount": 500
-      },
-      {
-        "name": "Studio Vault Pack (1,000 Notes - $100,000 Face Value)",
-        "price": 4000,
-        "savingsLabel": "Save 38%",
-        "billCount": 1000
-      },
-      {
-        "name": "Director Platinum Pack (2,500 Notes - $250,000 Face Value)",
-        "price": 10000,
-        "savingsLabel": "Save 47%",
-        "billCount": 2500
       }
     ],
     "packageContents": [
-      "100x high-fidelity replica bills matching regulatory dimensions.",
+      "50x high-fidelity replica bills matching regulatory dimensions.",
       "Heavy-duty secure strap branded with production-grade style bands.",
       "Laminated Certificate of Authenticity signed by visual compliance officers.",
       "Anti-humidity film protector sleeve for secure storage."
@@ -452,60 +437,45 @@ export const PRODUCTS: Product[] = [
   },
   {
     "id": "us-50-stack",
-    "slug": "us-50-stack",
-    "name": "Buy Counterfeit $50 US Dollars Banknotes",
-    "tagline": "Premium authentic $50 US Dollars. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
+    "slug": "counterfeit-usd-50-banknotes",
+    "name": "Counterfeit USD $50 Banknotes",
+    "tagline": "Premium authentic counterfeit usd $50 banknotes. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
     "category": "US Dollars",
-    "rating": 4.8,
-    "reviewCount": 71,
-    "basePrice": 200,
-    "originalPrice": 300,
+    "rating": 4.5,
+    "reviewCount": 80,
+    "basePrice": 500,
+    "originalPrice": 650,
     "colorTheme": "from-rose-500/10 to-red-600/15 text-rose-400 border-rose-500/20",
     "stripeColor": "#C0397B",
     "bannerColor": "bg-rose-600/10 border-rose-500/30 text-rose-400",
     "imageSet": [
-      "https://propcounterfeitnotes.com/public/upload/product/buy-counterfeit-50-cad-banknotes.250webp",
-      "https://propcounterfeitnotes.com/public/upload/product/buy-counterfeit-50-cad-banknotes.250webp"
+      "https://propcounterfeitnotes.com/public/upload/product/buy-50-us-dollar-bills.225webp",
+      "https://picsum.photos/seed/prop50b/600/400",
+      "https://picsum.photos/seed/prop50d/600/400"
     ],
-    "description": "$50 US Dollars with exquisite anti-reflective matte coating, perfect for high-definition cinematic capture.",
-    "longDescription": "Cinema-grade realistic currency reproduction certified for television and motion picture use.",
-    "coaText": "Certified compliant with legal filming guidelines.",
+    "description": "Purchase Fake USD $50 Bills – High-Quality Counterfeit Currency\n\nIf you’re searching for realistic counterfeit $50 bills that meet high standards of visual and tactile authenticity, you’ve come to the right place. Our fake USD $50 banknotes are crafted using state-of-the-art printing methods and advanced security feature simulations.",
+    "longDescription": "Purchase Fake USD $50 Bills – High-Quality Counterfeit Currency\n\nIf you’re searching for realistic counterfeit $50 bills that meet high standards of visual and tactile authenticity, you’ve come to the right place. Our fake USD $50 banknotes are crafted using state-of-the-art printing methods and advanced security feature simulations. These counterfeit fifty dollar bills are virtually indistinguishable from genuine currency under casual inspection, making them ideal for practical demonstrations, research, or controlled use.\n\nWhy Buy Our Fake $50 Dollar Notes?\n\nEach counterfeit USD $50 bill we produce includes multiple layers of detail and security enhancements that mimic authentic U.S. currency. From embedded UV fibers to simulated watermarks, our notes are developed to pass visual verification and basic pen tests. They’re also printed on banknote-grade paper for an accurate feel in the hand.\n\n\n\t✅ Premium quality banknote paper\n\t✅ Simulated security threads and UV features\n\t✅ Watermark emulation and color-shifting ink\n\t✅ Raised ink texture on key printed areas\n\t✅ Passes standard marker and visual checks\n\n\nHow to Buy Counterfeit $50 Bills\n\nBuying fake $50 bills is safe and straightforward through our platform. Simply select the quantity you want, proceed through our encrypted checkout system, and select your preferred payment option. We support secure and anonymous payment methods, giving you full control over your purchase. Every order is packed with care and shipped quickly with full tracking details.\n\nWhere to Buy Fake $50 Notes\n\nWhen looking for where to buy counterfeit $50 bills, trust a provider with a solid reputation. We’ve helped thousands of customers worldwide get access to realistic fake USD banknotes that meet their expectations. Whether you’re a new buyer or a returning client, our team ensures top-tier service and product quality every time.\n\nSafe Use & Responsibility Notice\n\nThese counterfeit $50 notes are intended for educational, testing, and lawful novelty use. We do not condone the use of fake currency for fraudulent purposes. Buyers are solely responsible for how they use the product and must comply with all local and federal laws.\n\nShipping & Delivery\n\nWe ship worldwide using stealth packaging techniques to ensure privacy and security. Most orders are processed within 24 hours and delivered with tracking numbers. For larger orders, please reach out for bulk pricing or special requirements.\n\nPurchase your fake USD $50 bills today and experience unmatched quality, fast delivery, and complete discretion. Our counterfeit fifty dollar notes deliver the realism and reliability that serious buyers expect.\n\n                            \n                            \n                                \n                                    \n                                        \n                                                                                      \n                                        \n                                            Submit a Review\n                                            \n                                                \n                                                    \n                                                        Select Rating Star : \n                                                        \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                        \n                                                    \n                                                    \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                            Submit",
+    "coaText": "Official COA Issued: Meets Bank of Canada guidelines for legitimate filmmaking props.",
     "variants": [
       {
-        "name": "Starter Bundle (50 Notes - $2,500 Face Value)",
-        "price": 200,
-        "savingsLabel": "Save 33%",
-        "billCount": 50
-      },
-      {
-        "name": "Compact Bundle (100 Notes - $5,000 Face Value)",
-        "price": 400,
-        "savingsLabel": "Save 31%",
+        "name": "Standard Pack ($5,000  USD Face Value)",
+        "price": 500,
         "billCount": 100
       },
       {
-        "name": "Premium Bundle (250 Notes - $12,500 Face Value)",
+        "name": "Standard Pack ($10,000 USD Face Value)",
         "price": 1000,
-        "savingsLabel": "Save 23%",
-        "billCount": 250
+        "billCount": 200
       },
       {
-        "name": "Production Bundle (500 Notes - $25,000 Face Value)",
+        "name": "Standard Pack ($20,000 USD Face Value)",
         "price": 2000,
-        "savingsLabel": "Save 33%",
-        "billCount": 500
+        "billCount": 400
       },
       {
-        "name": "Studio Vault Pack (1,000 Notes - $50,000 Face Value)",
-        "price": 4000,
-        "savingsLabel": "Save 38%",
+        "name": "Standard Pack ($50,000 USD Face Value)",
+        "price": 5000,
         "billCount": 1000
-      },
-      {
-        "name": "Director Platinum Pack (2,500 Notes - $125,000 Face Value)",
-        "price": 10000,
-        "savingsLabel": "Save 47%",
-        "billCount": 2500
       }
     ],
     "packageContents": [
@@ -1251,6 +1221,163 @@ export const PRODUCTS: Product[] = [
     ],
     "packageContents": [
       "100x high-fidelity replica bills matching regulatory dimensions.",
+      "Heavy-duty secure strap branded with production-grade style bands.",
+      "Laminated Certificate of Authenticity signed by visual compliance officers.",
+      "Anti-humidity film protector sleeve for secure storage."
+    ],
+    "storageInstructions": "Store horizontally inside secure lockers. Keep away from extreme heat. Do not use iron or heat devices directly.",
+    "supplyChain": "Reproduction plates prepared at local imaging workshops. Synthetic fibers sourced domestically."
+  },
+  {
+    "id": "us-20-stack",
+    "slug": "counterfeit-usd-20-banknotes",
+    "name": "Counterfeit USD $20 Banknotes",
+    "tagline": "Premium authentic counterfeit usd $20 banknotes. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
+    "category": "US Dollars",
+    "badge": "Best Seller",
+    "rating": 4.9,
+    "reviewCount": 110,
+    "basePrice": 500,
+    "originalPrice": 650,
+    "colorTheme": "from-emerald-500/10 to-teal-500/15 text-emerald-400 border-emerald-500/20",
+    "stripeColor": "#6A8E4E",
+    "bannerColor": "bg-emerald-600/10 border-emerald-500/30 text-emerald-400",
+    "imageSet": [
+      "https://propcounterfeitnotes.com/public/upload/product/buy-20-us-dollar-bills.73webp",
+      "https://picsum.photos/seed/prop20b/600/400",
+      "https://picsum.photos/seed/prop20d/600/400"
+    ],
+    "description": "Order Fake Counterfeit USD $20 Bills – Premium Fake $20 Notes\n\nOrder high-quality counterfeit $20 bills crafted to closely mimic genuine U.S.",
+    "longDescription": "Order Fake Counterfeit USD $20 Bills – Premium Fake $20 Notes\n\nOrder high-quality counterfeit $20 bills crafted to closely mimic genuine U.S. currency. Our premium fake $20 notes are produced with advanced printing techniques and banknote-grade materials to deliver a realistic look and feel. Whether you need fake $20s for research, training, or other permissible uses, these counterfeit twenty dollar bills are designed to pass basic visual inspections and common detector tests.\n\nWhy Purchase Our Fake $20 Bills?\n\nWhen you buy counterfeit $20 bills from our store, you receive superior quality and attention to detail. Each fake $20 note features carefully reproduced elements such as microprinting, UV-reactive fibers, and simulated watermarks to achieve an authentic appearance. The tactile finish and raised ink emulate the texture of real currency, making these counterfeit $20s convincing to the eye and touch.\n\n\n\t✅ Banknote-style paper for authentic texture\n\t✅ Simulated security thread and watermark effects\n\t✅ UV-reactive fibers and microprint details\n\t✅ Raised print for tactile realism\n\t✅ Designed to pass basic counterfeit pen checks\n\n\nHow to Buy Counterfeit $20 Notes\n\nPurchasing fake $20 bills is simple and discreet. Add your desired quantity to the cart, choose a secure payment option, and complete checkout. We offer multiple payment methods to protect privacy and provide efficient order processing. Once your order is confirmed, we handle discreet packaging and prompt worldwide shipping so your counterfeit $20 bills arrive safely and on schedule.\n\nWhere to Buy Fake $20 Bills\n\nWondering where to buy counterfeit $20 bills you can trust? Our online store is a trusted source for high-grade fake USD. We maintain strict quality controls and customer support to ensure satisfaction with every purchase. Bulk buyers and dealers can request custom quantities or special packaging for wholesale counterfeit $20 orders.\n\nResponsible Use & Disclaimer\n\nThese counterfeit $20 banknotes are offered for legitimate uses such as research, props in controlled environments, educational demonstrations, and currency-handling practice. Customers must comply with all local laws and regulations. We are not responsible for illegal misuse of counterfeit money purchased from us.\n\nFast, Discreet Shipping\n\nFast processing and stealth packaging are standard for all orders of fake $20 bills. Tracking is available for most destinations. For urgent or large-quantity orders, contact our support team to arrange priority processing and any special requirements.\n\nOrder your counterfeit USD $20 bills today and get premium-quality fake twenty dollar notes that meet the highest standards for realism. Whether you need a handful or a bulk shipment, we make buying counterfeit $20s safe, discreet, and reliable.\n\n                            \n                            \n                                \n                                    \n                                        \n                                                                                      \n                                        \n                                            Submit a Review\n                                            \n                                                \n                                                    \n                                                        Select Rating Star : \n                                                        \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                        \n                                                    \n                                                    \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                            Submit",
+    "coaText": "Official COA Issued: Meets Bank of Canada guidelines for legitimate filmmaking props.",
+    "variants": [
+      {
+        "name": "Standard Pack ($5,000 USD Face Value)",
+        "price": 500,
+        "billCount": 250
+      },
+      {
+        "name": "Standard Pack ($10,000 USD Face Value)",
+        "price": 1000,
+        "billCount": 500
+      },
+      {
+        "name": "Standard Pack ($20,000 USD Face Value)",
+        "price": 2000,
+        "billCount": 1000
+      },
+      {
+        "name": "Standard Pack ($50,000 USD Face Value)",
+        "price": 5000,
+        "billCount": 2500
+      }
+    ],
+    "packageContents": [
+      "250x high-fidelity replica bills matching regulatory dimensions.",
+      "Heavy-duty secure strap branded with production-grade style bands.",
+      "Laminated Certificate of Authenticity signed by visual compliance officers.",
+      "Anti-humidity film protector sleeve for secure storage."
+    ],
+    "storageInstructions": "Store horizontally inside secure lockers. Keep away from extreme heat. Do not use iron or heat devices directly.",
+    "supplyChain": "Reproduction plates prepared at local imaging workshops. Synthetic fibers sourced domestically."
+  },
+  {
+    "id": "us-10-stack",
+    "slug": "counterfeit-usd-10-banknotes",
+    "name": "Counterfeit USD $10 Banknotes",
+    "tagline": "Premium authentic counterfeit usd $10 banknotes. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
+    "category": "US Dollars",
+    "rating": 5,
+    "reviewCount": 83,
+    "basePrice": 500,
+    "originalPrice": 650,
+    "colorTheme": "from-violet-500/10 to-purple-500/15 text-purple-400 border-purple-500/20",
+    "stripeColor": "#8B5CF6",
+    "bannerColor": "bg-purple-600/10 border-purple-500/30 text-purple-400",
+    "imageSet": [
+      "https://propcounterfeitnotes.com/public/upload/product/buy-10-us-dollar-bills.85webp",
+      "https://picsum.photos/seed/prop10b/600/400",
+      "https://picsum.photos/seed/prop10d/600/400"
+    ],
+    "description": "Buy Counterfeit USD $10 Banknotes – Premium Fake Money for Sale\n\nLooking for realistic counterfeit $10 bills that are virtually indistinguishable from real U.S.",
+    "longDescription": "Buy Counterfeit USD $10 Banknotes – Premium Fake Money for Sale\n\nLooking for realistic counterfeit $10 bills that are virtually indistinguishable from real U.S. currency? You’ve come to the right place. Our high-quality fake USD $10 notes are professionally printed and designed using cutting-edge technology, making them ideal for discreet use and handling. Every detail has been carefully replicated—from color-shifting ink to watermarks—to offer a premium counterfeit currency experience.\n\nWhy Purchase Our Fake USD $10 Notes?\n\nOur counterfeit $10 banknotes are produced with precision and accuracy to mirror the appearance, texture, and security features of genuine currency. Whether you're ordering for personal research, cash-handling practice, or discreet transactions, these notes are engineered to pass basic visual inspections and common counterfeit detection pens.\n\n\n\t✅ Printed on banknote-quality paper\n\t✅ Includes embedded security threads & watermarks\n\t✅ UV-reactive fibers for enhanced realism\n\t✅ Raised ink for tactile feel\n\t✅ Passes basic counterfeit pen tests\n\n\nHow to Buy Counterfeit USD $10 Bills Online\n\nOrdering fake $10 bills is quick and secure. Simply add the quantity you need to your cart, proceed to checkout, and choose your preferred payment method. We accept secure, anonymous payment options to ensure customer privacy. Our team guarantees fast processing and discreet worldwide shipping.\n\nWhere to Buy Fake 10 Dollar Notes\n\nWondering where to buy fake $10 notes that look and feel real? Our website is a trusted source for top-tier counterfeit money. With 24/7 customer support and a proven track record, we ensure each client receives a quality product and reliable service every time.\n\nImportant Notice\n\nAll customers are advised to use our counterfeit money responsibly. These notes are for research, novelty, and collection purposes only. We are not liable for any misuse of the product.\n\nFast & Discreet Delivery\n\nWe ship globally using stealth packaging to avoid detection. Your counterfeit USD $10 banknotes will be securely packed and delivered in a timely manner. Tracking details are provided with every shipment.\n\nBulk Orders & Special Requests\n\nIf you wish to place a bulk order or need customized denominations, feel free to contact our support team. We offer discounted pricing for wholesale fake USD orders.\n\nOrder your counterfeit USD $10 bills today and experience premium quality fake money that gets the job done. Trust our expertise and join thousands of satisfied clients worldwide who rely on us for their counterfeit currency needs.\n\n                            \n                            \n                                \n                                    \n                                        \n                                                                                      \n                                        \n                                            Submit a Review\n                                            \n                                                \n                                                    \n                                                        Select Rating Star : \n                                                        \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                        \n                                                    \n                                                    \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                            Submit",
+    "coaText": "Official COA Issued: Meets Bank of Canada guidelines for legitimate filmmaking props.",
+    "variants": [
+      {
+        "name": "Standard Pack ($5,000 USD Face Value)",
+        "price": 500,
+        "billCount": 500
+      },
+      {
+        "name": "Standard Pack ($10,000 USD Face Value)",
+        "price": 1000,
+        "billCount": 1000
+      },
+      {
+        "name": "Standard Pack ($20,000 USD Face Value)",
+        "price": 2000,
+        "billCount": 2000
+      },
+      {
+        "name": "Standard Pack ($50,000 USD Face Value)",
+        "price": 5000,
+        "billCount": 5000
+      }
+    ],
+    "packageContents": [
+      "500x high-fidelity replica bills matching regulatory dimensions.",
+      "Heavy-duty secure strap branded with production-grade style bands.",
+      "Laminated Certificate of Authenticity signed by visual compliance officers.",
+      "Anti-humidity film protector sleeve for secure storage."
+    ],
+    "storageInstructions": "Store horizontally inside secure lockers. Keep away from extreme heat. Do not use iron or heat devices directly.",
+    "supplyChain": "Reproduction plates prepared at local imaging workshops. Synthetic fibers sourced domestically."
+  },
+  {
+    "id": "us-5-stack",
+    "slug": "counterfeit-usd-5-banknotes",
+    "name": "Counterfeit USD $5 Banknotes",
+    "tagline": "Premium authentic counterfeit usd $5 banknotes. Engineered for extreme close-ups on production film grids under motion picture guidelines.",
+    "category": "US Dollars",
+    "rating": 4.8,
+    "reviewCount": 142,
+    "basePrice": 500,
+    "originalPrice": 650,
+    "colorTheme": "from-blue-500/10 to-indigo-600/15 text-blue-400 border-blue-500/20",
+    "stripeColor": "#2E5FA8",
+    "bannerColor": "bg-blue-600/10 border-blue-500/30 text-blue-400",
+    "imageSet": [
+      "https://propcounterfeitnotes.com/public/upload/product/buy-5-us-dollar-bills.223webp",
+      "https://picsum.photos/seed/prop5b/600/400",
+      "https://picsum.photos/seed/prop5d/600/400"
+    ],
+    "description": "Buy Counterfeit USD $5 Banknotes Online\n\nLooking for high-quality counterfeit $5 USD banknotes? You’ve come to the right place.",
+    "longDescription": "Buy Counterfeit USD $5 Banknotes Online\n\nLooking for high-quality counterfeit $5 USD banknotes? You’ve come to the right place. We offer authentic-looking fake 5 dollar bills designed to pass various security checks and ensure smooth transactions. Whether you’re searching for a reliable source to buy counterfeit money online or wondering how to buy fake $5 bills without risks, we’ve got you covered.\n\nWhy Choose Our Fake $5 USD Bills?\n\n\n\tPrinted using state-of-the-art printing technology and secure inks\n\tFeatures embedded security threads, watermarks, and accurate microprinting\n\tIdentical in size, color, and texture to real $5 USD bills\n\tUV and pen-test safe – passes light detection and ink test pens\n\tDiscreet and trackable shipping worldwide\n\n\nWhere to Buy Counterfeit $5 Dollar Bills?\n\nFinding a legit source for counterfeit 5 dollar bills is challenging. That’s why we prioritize quality, customer service, and fast delivery. Thousands of clients trust our service for ordering fake USD currency without any hassles. We ensure stealth packaging to avoid issues during customs checks and provide proof of shipping for every order.\n\nHow to Buy Fake $5 USD Banknotes\n\n\n\tSelect the quantity of counterfeit $5 bills you want to purchase\n\tAdd to cart and proceed to checkout securely\n\tChoose your preferred payment method (Crypto, Zelle, etc.)\n\tReceive tracking info once the order is dispatched\n\tExpect delivery within 2–5 business days\n\n\nIdeal For:\n\n\n\tEveryday small transactions\n\tTesting ATM and POS systems\n\tTraining retail or cashier staff\n\n\nSecure & Discreet Shipping\n\nAll orders for fake USD banknotes are packed securely and delivered discreetly. We ship globally and provide guaranteed delivery or reship at no extra cost. Your privacy and safety are our top priorities.\n\nOrder your counterfeit $5 bills today and enjoy the highest quality fake cash available on the market. Perfectly crafted to remain undetectable, our fake 5 dollar notes are trusted by thousands worldwide.\n                            \n                            \n                                \n                                    \n                                        \n                                                                                      \n                                        \n                                            Submit a Review\n                                            \n                                                \n                                                    \n                                                        Select Rating Star : \n                                                        \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                            \n                                                        \n                                                    \n                                                    \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                        \n                                                    \n                                                    \n                                                        \n                                                            Submit",
+    "coaText": "Official COA Issued: Meets Bank of Canada guidelines for legitimate filmmaking props.",
+    "variants": [
+      {
+        "name": "Standard Pack ($5,000 USD Face Value)",
+        "price": 500,
+        "billCount": 1000
+      },
+      {
+        "name": "Standard Pack ($10,000 USD Face Value)",
+        "price": 1000,
+        "billCount": 2000
+      },
+      {
+        "name": "Standard Pack ($20,000 USD Face Value)",
+        "price": 2000,
+        "billCount": 4000
+      },
+      {
+        "name": "Standard Pack ($50,000 USD Face Value)",
+        "price": 5000,
+        "billCount": 10000
+      }
+    ],
+    "packageContents": [
+      "1000x high-fidelity replica bills matching regulatory dimensions.",
       "Heavy-duty secure strap branded with production-grade style bands.",
       "Laminated Certificate of Authenticity signed by visual compliance officers.",
       "Anti-humidity film protector sleeve for secure storage."

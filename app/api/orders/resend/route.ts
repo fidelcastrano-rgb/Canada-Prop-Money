@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getDB } from "@/lib/db";
 import { sendCustomerConfirmation, sendAdminNotification } from "@/lib/email-service";
 
+export const runtime = "edge";
+
 export async function POST(req: NextRequest) {
   try {
     const { orderNumber, emailType } = await req.json();
@@ -13,7 +15,7 @@ export async function POST(req: NextRequest) {
     const db = getDB();
 
     // Query order joined with customer
-    const order = db.prepare(`
+    const order = await db.prepare(`
       SELECT 
         o.id,
         o.order_number as orderNumber,
@@ -28,18 +30,18 @@ export async function POST(req: NextRequest) {
       FROM orders o
       JOIN customers c ON o.customer_id = c.id
       WHERE o.order_number = ?
-    `).get(orderNumber) as any;
+    `).bind(orderNumber).first() as any;
 
     if (!order) {
       return NextResponse.json({ error: "Order not found." }, { status: 404 });
     }
 
     // Query items
-    const items = db.prepare(`
+    const { results: items } = await db.prepare(`
       SELECT product_name as name, quantity as qty, price
       FROM order_items
       WHERE order_id = ?
-    `).all(order.id) as any[];
+    `).bind(order.id).all();
 
     const emailPayload = {
       orderId: order.id,
@@ -50,7 +52,7 @@ export async function POST(req: NextRequest) {
       paymentMethod: order.paymentMethod,
       address: order.address,
       date: new Date().toLocaleDateString("en-CA"),
-      items: items.map((it: any) => ({ name: it.name, quantity: it.qty, price: it.price })),
+      items: (items as any[]).map((it: any) => ({ name: it.name, quantity: it.qty, price: it.price })),
       invoicePath: `/invoices/${order.orderNumber}.pdf`,
       phone: order.phone,
     };

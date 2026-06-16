@@ -1,6 +1,4 @@
 import { jsPDF } from "jspdf";
-import path from "path";
-import fs from "fs";
 
 export interface InvoiceData {
   orderNumber: string;
@@ -25,7 +23,7 @@ export interface InvoiceData {
   paymentMethod: string;
 }
 
-export async function generateInvoicePDF(data: InvoiceData): Promise<string> {
+export async function generateInvoicePDF(data: InvoiceData): Promise<{ base64: string; path: string }> {
   const doc = new jsPDF({
     orientation: "portrait",
     unit: "mm",
@@ -157,15 +155,8 @@ export async function generateInvoicePDF(data: InvoiceData): Promise<string> {
   doc.text("with standard, cleared legal marks of compliance strictly compliant with the Bank of Canada Act", 15, 268);
   doc.text("and Federal replica limits. Insolvent, fake use strictly prohibited. Intended only for on-set filming.", 15, 272);
 
-  // Save the invoice locally
-  const invoiceDir = path.join(process.cwd(), "public", "invoices");
-  if (!fs.existsSync(invoiceDir)) {
-    fs.mkdirSync(invoiceDir, { recursive: true });
-  }
-
-  const invoiceFilePath = path.join(invoiceDir, `${data.orderNumber}.pdf`);
-  const pdfArrayBuffer = doc.output("arraybuffer");
-  fs.writeFileSync(invoiceFilePath, Buffer.from(pdfArrayBuffer));
-
-  return `/invoices/${data.orderNumber}.pdf`;
+  // Instead of writing to disk (which fails on Cloudflare Pages), convert to Base64
+  const base64Data = doc.output("datauristring").split(',')[1];
+  
+  return { base64: base64Data, path: `/invoices/${data.orderNumber}.pdf` };
 }

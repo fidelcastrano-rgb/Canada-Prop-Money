@@ -212,7 +212,7 @@ export default function CheckoutPage() {
                   Thank You For Your Order!
                 </h1>
                 <p className="text-slate-400 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you, <span className="text-emerald-400 font-semibold font-sans">{submittedOrder.firstName}</span>! Your cinematic propMoney specifications are locked into our server D1 logs.
+                  Thank you, <span className="text-emerald-400 font-semibold font-sans">{submittedOrder.firstName}</span>! Your cinematic propMoney specifications are locked into our secure local database.
                 </p>
               </div>
 
